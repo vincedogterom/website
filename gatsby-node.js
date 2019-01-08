@@ -45,8 +45,15 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            church: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/church/"}}}
+            allAuthorsJson {
+              edges {
+                node {
+                  user
+                }
+              }
+            }
+            lifestyle: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/lifestyle/"}}}
             ) {
               edges {
                 node {
@@ -67,6 +74,28 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
+            music: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/music/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
+            programming: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/programming/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
             review: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/review/"}}}
             ) {
@@ -78,8 +107,8 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            tech: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/tech/"}}}
+            tutorial: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/tutorial/"}}}
             ) {
               edges {
                 node {
@@ -89,6 +118,29 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
+            rayriffy: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/rayriffy/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
+            SiriuSStarS: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/SiriuSStarS/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
+          }
         `,
       )
         .then(result => {
@@ -102,29 +154,48 @@ exports.createPages = ({graphql, actions}) => {
               data: {
                 allMarkdownRemark: {edges: null},
                 allCategoriesJson: {edges: null},
-                church: {edges: null},
+                allAuthorsJson: {edges: null},
+                lifestyle: {edges: null},
                 misc: {edges: null},
+                music: {edges: null},
+                programming: {edges: null},
                 review: {edges: null},
-                tech: {edges: null},
+                tutorial: {edges: null},
+                rayriffy: {edges: null},
+                SiriuSStarS: {edges: null},
               },
             }
             filteredresult.data.allMarkdownRemark.edges = result.data.allMarkdownRemark.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-            filteredresult.data.church.edges = result.data.church.edges.filter(
+            filteredresult.data.lifestyle.edges = result.data.lifestyle.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.misc.edges = result.data.misc.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-            filteredresult.data.tech.edges = result.data.tech.edges.filter(
+            filteredresult.data.music.edges = result.data.music.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
+            filteredresult.data.programming.edges = result.data.programming.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.review.edges = result.data.review.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
+            filteredresult.data.tutorial.edges = result.data.tutorial.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
+            filteredresult.data.rayriffy.edges = result.data.rayriffy.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
+            filteredresult.data.SiriuSStarS.edges = result.data.SiriuSStarS.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
             filteredresult.data.allCategoriesJson.edges =
               result.data.allCategoriesJson.edges
+            filteredresult.data.allAuthorsJson.edges =
+              result.data.allAuthorsJson.edges
           } else if (process.env.GATSBY_ENV === 'development') {
             filteredresult = result
           }
@@ -138,6 +209,7 @@ exports.createPages = ({graphql, actions}) => {
 
           const posts = result.data.allMarkdownRemark.edges
           const catrgories = result.data.allCategoriesJson.edges
+          const authors = result.data.allAuthorsJson.edges
 
           var filter
           const postsPerPage = 5
@@ -222,6 +294,30 @@ exports.createPages = ({graphql, actions}) => {
                   numPages: numCategoryPages,
                   pathPrefix,
                   regex: '/' + category.node.key + '/',
+                  skip: i * postsPerPage,
+                  status: filter,
+                },
+              })
+            })
+          })
+
+          // Create author pages
+          var authorPathPrefix = 'author/'
+          _.each(authors, (author, index) => {
+            var totalCount = result.data[author.node.user].edges.length
+            var numAuthorPages = Math.ceil(totalCount / postsPerPage)
+            var pathPrefix = authorPathPrefix + author.node.user
+            _.times(numAuthorPages, i => {
+              createPage({
+                path: i === 0 ? pathPrefix : pathPrefix + `/pages/${i + 1}`,
+                component: path.resolve('./src/templates/author.js'),
+                context: {
+                  author: author.node.user,
+                  currentPage: i + 1,
+                  limit: postsPerPage,
+                  numPages: numAuthorPages,
+                  pathPrefix,
+                  regex: '/' + author.node.user + '/',
                   skip: i * postsPerPage,
                   status: filter,
                 },
