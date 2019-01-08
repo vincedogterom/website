@@ -64,7 +64,7 @@ class BlogIndex extends React.Component {
             },
             {
               name: 'article:author',
-              content: 'https://facebook.com/rayriffy',
+              content: 'https://facebook.com/dogterom',
             },
             {
               name: 'og:image',
