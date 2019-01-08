@@ -92,7 +92,6 @@ exports.createPages = ({graphql, actions}) => {
                 node {
                   frontmatter {
                     status
-                }
               }
             }
           }
