@@ -136,22 +136,16 @@ exports.createPages = ({graphql, actions}) => {
             filteredresult.data.allMarkdownRemark.edges = result.data.allMarkdownRemark.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-            filteredresult.data.lifestyle.edges = result.data.lifestyle.edges.filter(
+            filteredresult.data.church.edges = result.data.church.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.misc.edges = result.data.misc.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-            filteredresult.data.music.edges = result.data.music.edges.filter(
-              a => a.node.frontmatter.status === 'published',
-            )
-            filteredresult.data.programming.edges = result.data.programming.edges.filter(
+            filteredresult.data.tech.edges = result.data.tech.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.review.edges = result.data.review.edges.filter(
-              a => a.node.frontmatter.status === 'published',
-            )
-            filteredresult.data.tutorial.edges = result.data.tutorial.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.allCategoriesJson.edges =
