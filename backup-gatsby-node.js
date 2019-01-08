@@ -52,6 +52,17 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
+            lifestyle: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/lifestyle/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
             church: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/church/"}}}
             ) {
@@ -108,7 +119,7 @@ exports.createPages = ({graphql, actions}) => {
               }
             }
             tech: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/tech/"}}}
+              filter: {frontmatter: {author: {regex: "/tech/"}}}
             ) {
               edges {
                 node {
