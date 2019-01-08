@@ -52,6 +52,17 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
+            lifestyle: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/lifestyle/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
             church: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/church/"}}}
             ) {
@@ -63,8 +74,30 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
+            family: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/family/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
             misc: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/misc/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
+            music: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/music/"}}}
             ) {
               edges {
                 node {
@@ -86,17 +119,28 @@ exports.createPages = ({graphql, actions}) => {
               }
             }
             tech: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/tech/"}}}
+              filter: {frontmatter: {author: {regex: "/tech/"}}}
             ) {
               edges {
                 node {
                   frontmatter {
                     status
+                  }
+                }
+              }
+            }
+            watch: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/watch/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
               }
             }
           }
-        }
-      }
         `,
       )
         .then(result => {
@@ -112,9 +156,12 @@ exports.createPages = ({graphql, actions}) => {
                 allCategoriesJson: {edges: null},
                 allAuthorsJson: {edges: null},
                 church: {edges: null},
+                family: {edges: null},
                 misc: {edges: null},
+                music: {edges: null},
                 review: {edges: null},
                 tech: {edges: null},
+                watch: {edges: null},
               },
             }
             filteredresult.data.allMarkdownRemark.edges = result.data.allMarkdownRemark.edges.filter(
@@ -123,13 +170,22 @@ exports.createPages = ({graphql, actions}) => {
             filteredresult.data.church.edges = result.data.church.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
+            filteredresult.data.family.edges = result.data.family.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
             filteredresult.data.misc.edges = result.data.misc.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
+            filteredresult.data.music.edges = result.data.music.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.review.edges = result.data.review.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.tech.edges = result.data.tech.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
+            filteredresult.data.watch.edges = result.data.watch.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.allCategoriesJson.edges =
