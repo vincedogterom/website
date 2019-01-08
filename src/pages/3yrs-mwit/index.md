@@ -3,7 +3,7 @@ title: Test blog
 subtitle: First attempt
 banner: ./banner.jpg
 category: misc
-author: vincedogterom
+author: VinceDogterom
 date: ""
 featured: false
 type: blog
