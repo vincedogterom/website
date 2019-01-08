@@ -96,6 +96,7 @@ exports.createPages = ({graphql, actions}) => {
               }
             }
           }
+        }
         `,
       )
         .then(result => {
