@@ -105,6 +105,7 @@ exports.createPages = ({graphql, actions}) => {
                 church: {edges: null},
                 misc: {edges: null},
                 review: {edges: null},
+                tech: {edges: null},
               },
             }
             filteredresult.data.allMarkdownRemark.edges = result.data.allMarkdownRemark.edges.filter(
