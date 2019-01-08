@@ -1,10 +1,10 @@
 {
-  "name": "rayriffy-blog",
-  "description": "The Nerdy Blogger",
-  "version": "1.0.10",
-  "author": "Phumrapee Limpianchop <contact@rayriffy.com>",
+  "name": "Dogterom-blog",
+  "description": "The IT Blogger",
+  "version": "0.0.10",
+  "author": "Vincent Dogterom <dogterom@gmail.com>",
   "bugs": {
-    "url": "https://github.com/rayriffy/rayriffy-blog/issues"
+    "url": "https://github.com/vincedogterom/website/issues"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
@@ -58,7 +58,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.14.2"
   },
-  "homepage": "https://blog.rayriffy.com",
+  "homepage": "https://blog.dogterom.net",
   "keywords": [
     "gatsby",
     "gatsbyjs",
@@ -71,7 +71,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rayriffy/rayriffy-blog.git"
+    "url": "git+https://github.com/vincedogterom/website.git"
   },
   "scripts": {
     "dev": "cross-env GATSBY_ENV=development gatsby develop --https",
