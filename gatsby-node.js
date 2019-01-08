@@ -46,7 +46,7 @@ exports.createPages = ({graphql, actions}) => {
               }
             }
             lifestyle: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/lifestyle/"}}}
+              filter: {frontmatter: {category: {regex: "/church/"}}}
             ) {
               edges {
                 node {
@@ -68,28 +68,6 @@ exports.createPages = ({graphql, actions}) => {
               }
             }
             music: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/music/"}}}
-            ) {
-              edges {
-                node {
-                  frontmatter {
-                    status
-                  }
-                }
-              }
-            }
-            programming: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/programming/"}}}
-            ) {
-              edges {
-                node {
-                  frontmatter {
-                    status
-                  }
-                }
-              }
-            }
-            review: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/review/"}}}
             ) {
               edges {
@@ -100,8 +78,8 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            tutorial: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/tutorial/"}}}
+            programming: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/tech/"}}}
             ) {
               edges {
                 node {
@@ -111,7 +89,6 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-          }
         `,
       )
         .then(result => {
