@@ -45,7 +45,7 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            lifestyle: allMarkdownRemark(
+            church: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/church/"}}}
             ) {
               edges {
@@ -67,7 +67,7 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            music: allMarkdownRemark(
+            review: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/review/"}}}
             ) {
               edges {
@@ -78,7 +78,7 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            programming: allMarkdownRemark(
+            tech: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/tech/"}}}
             ) {
               edges {
