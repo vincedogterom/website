@@ -3,7 +3,7 @@ var hostname
 if (process.env.GATSBY_ENV === 'production') {
   hostname = 'https://blog.dogterom.net'
 } else if (process.env.GATSBY_ENV === 'staging') {
-  hostname = 'https://blog-staging.dogterom.net'
+  hostname = 'https://blog.dogterom.net'
 } else if (process.env.GATSBY_ENV === 'development') {
   hostname = 'https://localhost:8000'
 }
@@ -110,9 +110,9 @@ module.exports = {
       options: {
         trackingId: `${
           process.env.GATSBY_ENV === 'production'
-            ? 'UA-85367836-2'
+            ? 'UA-132206189-1'
             : process.env.GATSBY_ENV === 'staging'
-            ? 'UA-85367836-3'
+            ? 'UA-132214578-1'
             : ''
         }`,
       },
