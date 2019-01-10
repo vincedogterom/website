@@ -1,18 +1,18 @@
 var hostname
 
 if (process.env.GATSBY_ENV === 'production') {
-  hostname = 'https://blog.rayriffy.com'
+  hostname = 'https://blog.dogterom.net'
 } else if (process.env.GATSBY_ENV === 'staging') {
-  hostname = 'https://blog-staging.rayriffy.com'
+  hostname = 'https://blog-staging.dogterom.net'
 } else if (process.env.GATSBY_ENV === 'development') {
   hostname = 'https://localhost:8000'
 }
 
 module.exports = {
   siteMetadata: {
-    title: 'Riffy Blog',
-    author: 'Phumrapee Limpianchop',
-    description: 'The Nerdy Blogger',
+    title: 'Vince Blog',
+    author: 'Vincent Dogterom',
+    description: 'The IT blogger',
     siteUrl: `${hostname}`,
   },
   pathPrefix: '/',
@@ -124,9 +124,9 @@ module.exports = {
       options: {
         trackingId: `${
           process.env.GATSBY_ENV === 'production'
-            ? 'UA-85367836-2'
+            ? 'UA-132206189-1'
             : process.env.GATSBY_ENV === 'staging'
-            ? 'UA-85367836-3'
+            ? 'UA-132214578-1'
             : ''
         }`,
       },
@@ -135,8 +135,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Riffy Blog`,
-        short_name: `Riffy Blog`,
+        name: `Vince Blog`,
+        short_name: `Vince Blog`,
         start_url: `/`,
         background_color: `#f5f5f5`,
         theme_color: `#1e88e5`,
