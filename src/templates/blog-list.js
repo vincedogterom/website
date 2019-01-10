@@ -48,11 +48,11 @@ export default class BlogIndex extends React.Component {
             },
             {
               name: 'og:locale',
-              content: 'th_TH',
+              content: 'en_EN',
             },
             {
               name: 'og:locale:alternate',
-              content: 'en_US',
+              content: 'nl_NL',
             },
             {
               name: 'og:title',
@@ -64,7 +64,7 @@ export default class BlogIndex extends React.Component {
             },
             {
               name: 'article:author',
-              content: 'https://facebook.com/rayriffy',
+              content: 'https://facebook.com/dogterom',
             },
             {
               name: 'og:image',
@@ -84,11 +84,11 @@ export default class BlogIndex extends React.Component {
             },
             {
               name: 'twitter:site',
-              content: '@rayriffy',
+              content: '@dogterom',
             },
             {
               name: 'twitter:creator',
-              content: '@rayriffy',
+              content: '@dogterom',
             },
             {
               name: 'twitter:title',
