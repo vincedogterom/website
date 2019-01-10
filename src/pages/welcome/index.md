@@ -1,7 +1,7 @@
 ---
 title: Welcome to my blog
 subtitle: My first post
-banner: ./banner.jpg
+banner: ./banner.png
 category: tutorial
 author: rayriffy
 date: "2019-01-04T04:00:00.000Z"
