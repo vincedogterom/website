@@ -118,6 +118,17 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
+            vincedogterom: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/vincentdogterom/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
             rayriffy: allMarkdownRemark(
               filter: {frontmatter: {author: {regex: "/rayriffy/"}}}
             ) {
