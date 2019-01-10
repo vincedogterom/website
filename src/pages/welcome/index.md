@@ -10,6 +10,6 @@ type: blog
 status: published
 ---
 
-Welcome to my **FIRST** blog post
+Welcome to my first blog post
 
 More will be added as we go along
