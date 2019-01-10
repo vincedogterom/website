@@ -1,22 +1,28 @@
 var hostname
 
 if (process.env.GATSBY_ENV === 'production') {
-  hostname = 'https://blog.dogterom.net'
+  hostname = 'https://blog.rayriffy.com'
 } else if (process.env.GATSBY_ENV === 'staging') {
-  hostname = 'https://blog.dogterom.net'
+  hostname = 'https://blog-staging.rayriffy.com'
 } else if (process.env.GATSBY_ENV === 'development') {
   hostname = 'https://localhost:8000'
 }
 
 module.exports = {
   siteMetadata: {
-    title: 'Vince Blog',
-    author: 'Vincent Dogterom',
-    description: 'The IT Blogger',
+    title: 'Riffy Blog',
+    author: 'Phumrapee Limpianchop',
+    description: 'The Nerdy Blogger',
     siteUrl: `${hostname}`,
   },
   pathPrefix: '/',
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`kanit`],
+      },
+    },
     `gatsby-plugin-netlify-cache`,
     `gatsby-transformer-json`,
     {
@@ -31,7 +37,9 @@ module.exports = {
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           production: {
-            policy: [{userAgent: '*', disallow: ['/pages', '/category']}],
+            policy: [
+              {userAgent: '*', disallow: ['/pages', '/category', '/author']},
+            ],
           },
           staging: {
             policy: [{userAgent: '*', disallow: ['/']}],
@@ -54,7 +62,13 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: ['/pages/*', '/category', '/category/*'],
+        exclude: [
+          '/pages/*',
+          '/category',
+          '/category/*',
+          '/author',
+          '/author/*',
+        ],
       },
     },
     {
@@ -110,9 +124,9 @@ module.exports = {
       options: {
         trackingId: `${
           process.env.GATSBY_ENV === 'production'
-            ? 'UA-132206189-1'
+            ? 'UA-85367836-2'
             : process.env.GATSBY_ENV === 'staging'
-            ? 'UA-132214578-1'
+            ? 'UA-85367836-3'
             : ''
         }`,
       },
@@ -121,8 +135,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Vince Blog`,
-        short_name: `Vince Blog`,
+        name: `Riffy Blog`,
+        short_name: `Riffy Blog`,
         start_url: `/`,
         background_color: `#f5f5f5`,
         theme_color: `#1e88e5`,
