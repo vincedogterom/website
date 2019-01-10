@@ -7,7 +7,7 @@ import footerStyle from './footer.module.css'
 export default class FooterTemplate extends React.Component {
   render() {
     const imgUrl = 'https://s.w.org/images/core/emoji/2.4/svg/2764.svg'
-    const faceUrl = 'https://facebook.com/rayriffy'
+    const faceUrl = 'https://facebook.com/dogterom'
     return (
       <div className={footerStyle.footer}>
         <div className={footerStyle.container}>
@@ -32,7 +32,7 @@ export default class FooterTemplate extends React.Component {
               },
               {
                 name: 'Contact',
-                href: 'mailto:contact@rayriffy.com',
+                href: 'mailto:dogterom@gmail.com',
                 newtab: false,
               },
             ]}
