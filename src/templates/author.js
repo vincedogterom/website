@@ -52,11 +52,11 @@ export default class AuthorTemplate extends React.Component {
             },
             {
               name: 'og:locale',
-              content: 'th_TH',
+              content: 'en_EN',
             },
             {
               name: 'og:locale:alternate',
-              content: 'en_US',
+              content: 'nl_NL',
             },
             {
               name: 'og:title',
