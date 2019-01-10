@@ -1,0 +1,13 @@
+---
+title: Welcome to my blog
+subtitle: My first post
+banner: ./banner.jpg
+category: tutorial
+author: rayriffy
+date: "2019-01-04T04:00:00.000Z"
+featured: false
+type: blog
+status: published
+---
+
+Welcome to my first post!!!!!!!
