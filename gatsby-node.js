@@ -52,19 +52,8 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            church: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/church/"}}}
-            ) {
-              edges {
-                node {
-                  frontmatter {
-                    status
-                  }
-                }
-              }
-            }
-            family: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/family/"}}}
+            lifestyle: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/lifestyle/"}}}
             ) {
               edges {
                 node {
@@ -96,6 +85,17 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
+            programming: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/programming/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
             review: allMarkdownRemark(
               filter: {frontmatter: {category: {regex: "/review/"}}}
             ) {
@@ -107,8 +107,8 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            watch: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/watch/"}}}
+            tutorial: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/tutorial/"}}}
             ) {
               edges {
                 node {
@@ -118,8 +118,8 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            Vince: allMarkdownRemark(
-              filter: {frontmatter: {author: {regex: "/vincedogterom/"}}}
+            rayriffy: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/rayriffy/"}}}
             ) {
               edges {
                 node {
@@ -129,8 +129,8 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            Vince: allMarkdownRemark(
-              filter: {frontmatter: {author: {regex: "/vincedogterom/"}}}
+            SiriuSStarS: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/SiriuSStarS/"}}}
             ) {
               edges {
                 node {
@@ -155,12 +155,12 @@ exports.createPages = ({graphql, actions}) => {
                 allMarkdownRemark: {edges: null},
                 allCategoriesJson: {edges: null},
                 allAuthorsJson: {edges: null},
-                church: {edges: null},
-                family: {edges: null},
+                lifestyle: {edges: null},
                 misc: {edges: null},
                 music: {edges: null},
+                programming: {edges: null},
                 review: {edges: null},
-                tech: {edges: null},
+                tutorial: {edges: null},
                 rayriffy: {edges: null},
                 SiriuSStarS: {edges: null},
               },
@@ -168,10 +168,7 @@ exports.createPages = ({graphql, actions}) => {
             filteredresult.data.allMarkdownRemark.edges = result.data.allMarkdownRemark.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-            filteredresult.data.church.edges = result.data.church.edges.filter(
-              a => a.node.frontmatter.status === 'published',
-            )
-            filteredresult.data.family.edges = result.data.family.edges.filter(
+            filteredresult.data.lifestyle.edges = result.data.lifestyle.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.misc.edges = result.data.misc.edges.filter(
@@ -180,10 +177,13 @@ exports.createPages = ({graphql, actions}) => {
             filteredresult.data.music.edges = result.data.music.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
+            filteredresult.data.programming.edges = result.data.programming.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
             filteredresult.data.review.edges = result.data.review.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-            filteredresult.data.tech.edges = result.data.tech.edges.filter(
+            filteredresult.data.tutorial.edges = result.data.tutorial.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.rayriffy.edges = result.data.rayriffy.edges.filter(
