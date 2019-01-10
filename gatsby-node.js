@@ -107,8 +107,8 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            tech: allMarkdownRemark(
-              filter: {frontmatter: {category: {regex: "/tech/"}}}
+            watch: allMarkdownRemark(
+              filter: {frontmatter: {category: {regex: "/watch/"}}}
             ) {
               edges {
                 node {
@@ -118,8 +118,19 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            watch: allMarkdownRemark(
-              filter: {frontmatter: {author: {regex: "/watch/"}}}
+            Vince: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/vincedogterom/"}}}
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    status
+                  }
+                }
+              }
+            }
+            Vince: allMarkdownRemark(
+              filter: {frontmatter: {author: {regex: "/vincedogterom/"}}}
             ) {
               edges {
                 node {
@@ -150,7 +161,8 @@ exports.createPages = ({graphql, actions}) => {
                 music: {edges: null},
                 review: {edges: null},
                 tech: {edges: null},
-                watch: {edges: null},
+                rayriffy: {edges: null},
+                SiriuSStarS: {edges: null},
               },
             }
             filteredresult.data.allMarkdownRemark.edges = result.data.allMarkdownRemark.edges.filter(
@@ -174,7 +186,10 @@ exports.createPages = ({graphql, actions}) => {
             filteredresult.data.tech.edges = result.data.tech.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-            filteredresult.data.watch.edges = result.data.watch.edges.filter(
+            filteredresult.data.rayriffy.edges = result.data.rayriffy.edges.filter(
+              a => a.node.frontmatter.status === 'published',
+            )
+            filteredresult.data.SiriuSStarS.edges = result.data.SiriuSStarS.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.allCategoriesJson.edges =
