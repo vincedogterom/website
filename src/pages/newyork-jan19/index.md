@@ -1,10 +1,10 @@
 ---
 title: New York visit January 2019
 subtitle: Work trip and vegan experiences
-banner: ./banner.jpg
+banner: ./banner.png
 category: music
 author: SiriuSStarS
-date: "2018-12-24T04:30:00.000Z"
+date: "2019-01-14T05:30:00.000Z"
 featured: true
 type: blog
 status: published
@@ -16,7 +16,7 @@ My ramblings about my NY visit starting on the 13th of January 2019
 
 ## Departure - Amsterdam
 
-Departure on Sunday the 13rd of Jan at 09:15, my taxi driver arrived at 7:00 since I wanted to checkout the new KLM crownlounge. I know it's not fully finished yet but I was not impressed.... First of all very crowded and second no soy milk available... what!!! I quickly walked by to Privium airside lounge which is much much better.
+Departure on Sunday the 13rd of Jan at 09:15, my taxi driver arrived at 7:00 since I wanted to checkout the new KLM crownlounge. I know it's not fully finished yet but I was not impressed.... First of all very crowded and second no soy milk available... what!!! I quickly walked back to the Privium airside lounge which is much much better.
 
 ![IMAGE](./crown.png)
 
