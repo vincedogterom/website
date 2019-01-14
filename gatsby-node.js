@@ -204,7 +204,6 @@ exports.createPages = ({graphql, actions}) => {
             filteredresult.data.SiriuSStarS.edges = result.data.SiriuSStarS.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
-          )
           filteredresult.data.vincedogterom.edges = result.data.vincedogterom.edges.filter(
             a => a.node.frontmatter.status === 'published',
           )
