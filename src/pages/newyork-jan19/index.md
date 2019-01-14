@@ -23,7 +23,7 @@ Departure on Sunday the 13rd of Jan at 09:15, my taxi driver arrived at 7:00 sin
 ## Flight - Amsterdam --> NY JFK with Delta
 
 Pretty uneventful. I had ordered the asian vegetarian meal. Very tasteful.
-The actual plane was quite old and the video screen super small (or am I spoiled with the Emirates business class screen :-))
+The actual plane was quite old and the video screen super small (or am I spoiled with the Emirates business class screen 
 
 ## New York
 Arrived early at JFK and went through customs in a breeze. Had to wait 15m for my bag to arrive. Ordered a lyft and on my way to Renaissance Mid town my go to hotel for work visits.
