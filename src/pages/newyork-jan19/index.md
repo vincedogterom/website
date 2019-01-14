@@ -38,4 +38,4 @@ Since I started eating vegan about 2 months ago (disclaimer: not religious about
 
 Had an fab meal (tapas style) with croutons with cashew cheese, falafel and beets. Very nice indeed.
 
-![IMAGE](./vegan.jpg)
+![IMAGE](./vegan.png)
