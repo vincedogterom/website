@@ -3,7 +3,7 @@ title: New York visit January 2019
 subtitle: Work trip and vegan experiences
 banner: ./banner.png
 category: music
-author: vincedogterom
+author: rayriffy
 date: "2019-01-14T05:30:00.000Z"
 featured: true
 type: blog
