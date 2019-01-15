@@ -118,17 +118,6 @@ exports.createPages = ({graphql, actions}) => {
                 }
               }
             }
-            vincedogterom: allMarkdownRemark(
-              filter: {frontmatter: {author: {regex: "/vincedogterom/"}}}
-            ) {
-              edges {
-                node {
-                  frontmatter {
-                    status
-                  }
-                }
-              }
-            }
             rayriffy: allMarkdownRemark(
               filter: {frontmatter: {author: {regex: "/rayriffy/"}}}
             ) {
@@ -174,7 +163,6 @@ exports.createPages = ({graphql, actions}) => {
                 tutorial: {edges: null},
                 rayriffy: {edges: null},
                 SiriuSStarS: {edges: null},
-                vincedogterom: {edges: null},
               },
             }
             filteredresult.data.allMarkdownRemark.edges = result.data.allMarkdownRemark.edges.filter(
@@ -202,9 +190,6 @@ exports.createPages = ({graphql, actions}) => {
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.SiriuSStarS.edges = result.data.SiriuSStarS.edges.filter(
-              a => a.node.frontmatter.status === 'published',
-            )
-            filteredresult.data.vincedogterom.edges = result.data.vincedogterom.edges.filter(
               a => a.node.frontmatter.status === 'published',
             )
             filteredresult.data.allCategoriesJson.edges =
