@@ -10,9 +10,7 @@ type: blog
 status: published
 ---
 
-
 My ramblings about my NY visit starting on the 13th of January 2019
-
 
 ## Departure - Amsterdam
 
